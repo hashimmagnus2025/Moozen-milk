@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Design tokens — Vrinda premium dairy design system                  */
+/* ------------------------------------------------------------------ */
+:root {
+  /* Creamy backgrounds */
+  --color-cream: #fbf6ee;
+  --color-cream-deep: #f5eee0;
+  --color-cream-dark: #ece1cc;
+
+  /* Natural green family */
+  --color-forest: #2f5233;
+  --color-forest-dark: #22702c;
+  --color-blue-forest: #0c5192;
+  --color-orange-forest: #c06011;
+  --color-moss: #5c8a5c;
+  --color-sage: #dce9d5;
+
+  /* Warm dairy accents */
+  --color-gold: #e8a34c;
+  --color-gold-light: #f3c88a;
+  --color-terracotta: #c9673d;
+
+  /* Neutrals */
+  --color-charcoal: #2a2620;
+  --color-muted: #6b665c;
+  --color-white: #ffffff;
+
+  /* Section rhythm */
+  --section-y-mobile: 5.5rem;
+  --section-y-desktop: 9rem;
+  --container-x-mobile: 1.25rem;
+  --container-x-desktop: 5rem;
+  --container-max: 1440px;
+}
+
+@theme inline {
+  --color-cream: var(--color-cream);
+  --color-cream-deep: var(--color-cream-deep);
+  --color-cream-dark: var(--color-cream-dark);
+  --color-forest: var(--color-forest);
+  --color-forest-dark: var(--color-forest-dark);
+  --color-moss: var(--color-moss);
+  --color-sage: var(--color-sage);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-terracotta: var(--color-terracotta);
+  --color-charcoal: var(--color-charcoal);
+  --color-muted: var(--color-muted);
+  --color-blue-forest: var(--color-blue-forest);
+  --color-orange-forest: var(--color-orange-forest);
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+
+  --breakpoint-xs: 420px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-float-slow: float 7s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                 */
+/* ------------------------------------------------------------------ */
+* {
+  border-color: var(--color-cream-dark);
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-feature-settings: "ss01" on, "cv01" on;
+}
+
+::selection {
+  background-color: var(--color-gold-light);
+  color: var(--color-charcoal);
+}
+
+/* Custom scrollbar — subtle, premium */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-cream-dark);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-moss);
+}
+
+/* ------------------------------------------------------------------ */
+/* Reusable low-level utilities                                        */
+/* ------------------------------------------------------------------ */
+@utility container-premium {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-x-mobile);
+
+  @media (min-width: 1024px) {
+    padding-inline: var(--container-x-desktop);
+  }
+}
+
+@utility section-y {
+  padding-block: var(--section-y-mobile);
+
+  @media (min-width: 1024px) {
+    padding-block: var(--section-y-desktop);
+  }
+}
+
+@utility text-balance-pretty {
+  text-wrap: balance;
+}
+
+@utility bg-noise {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(42, 38, 32, 0.045) 1px,
+    transparent 0
+  );
+  background-size: 22px 22px;
+}
+
+@utility glass-nav {
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+}
