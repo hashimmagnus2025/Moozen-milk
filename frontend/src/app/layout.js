@@ -64,7 +64,7 @@ export const metadata = {
  */
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${jakarta.variable} scroll-smooth`}>
+    <html lang="en" className={`${fraunces.variable} ${jakarta.variable}`}>
       <body className="min-h-screen flex flex-col bg-cream text-charcoal font-sans antialiased selection:bg-gold/30 selection:text-charcoal">
         {children}
       </body>

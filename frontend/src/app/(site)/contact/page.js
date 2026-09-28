@@ -15,18 +15,18 @@ const CONTACT_DETAILS = [
   {
     icon: Mail,
     title: "Email Us",
-    text: "hello@moozen-milk.example",
+    text: "inquiry@moozen.in",
   },
   {
     icon: Phone,
     title: "Call Us",
     text: "+91 788 788 8822",
   },
-  {
-    icon: MapPin,
-    title: "Visit Us",
-    text: "Moozen Dairy Farm, Pune, Maharashtra, India",
-  },
+  // {
+  //   icon: MapPin,
+  //   title: "Visit Us",
+  //   text: "Moozen Dairy Farm, Pune, Maharashtra, India",
+  // },
 ];
 
 export default function ContactPage() {

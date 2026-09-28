@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -20,6 +21,10 @@ const variants = {
 /** Wraps route content so navigations cross-fade instead of hard-cutting. */
 export default function PageTransition({ children }) {
   const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <AnimatePresence mode="wait" initial={false}>

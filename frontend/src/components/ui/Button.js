@@ -7,15 +7,15 @@ import { cn } from "@/lib/utils";
 
 const VARIANTS = {
   primary:
-    "bg-forest text-cream hover:bg-forest-dark shadow-[0_10px_30px_-12px_rgba(47,82,51,0.55)]",
-  gold: "bg-gold text-forest-dark hover:bg-gold-light shadow-[0_10px_30px_-12px_rgba(232,163,76,0.55)]",
+    "bg-forest text-white hover:bg-forest-dark shadow-[0_10px_30px_-12px_rgba(11,95,165,0.55)]",
+  gold: "bg-gold text-forest-dark hover:bg-gold-light shadow-[0_10px_30px_-12px_rgba(245,166,35,0.55)]",
   outline:
     "bg-transparent text-forest border border-forest/30 hover:border-forest hover:bg-forest/5",
   ghost: "bg-transparent text-charcoal hover:bg-charcoal/5",
   light:
     "bg-cream text-forest-dark hover:bg-white shadow-[0_10px_30px_-12px_rgba(0,0,0,0.25)]",
   danger:
-    "bg-terracotta text-cream hover:bg-terracotta/90 shadow-[0_10px_30px_-12px_rgba(201,103,61,0.55)]",
+    "bg-terracotta text-white hover:bg-terracotta/90 shadow-[0_10px_30px_-12px_rgba(217,119,11,0.55)]",
 };
 
 const SIZES = {

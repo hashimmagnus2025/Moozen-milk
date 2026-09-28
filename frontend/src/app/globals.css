@@ -1,30 +1,30 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ */
-/* Design tokens — Vrinda premium dairy design system                  */
+/* Design tokens — Moozen Milk dairy design system (blue / white / amber) */
 /* ------------------------------------------------------------------ */
 :root {
-  /* Creamy backgrounds */
-  --color-cream: #fbf6ee;
-  --color-cream-deep: #f5eee0;
-  --color-cream-dark: #ece1cc;
+  /* Clean backgrounds */
+  --color-cream: #ffffff;
+  --color-cream-deep: #f4f9fd;
+  --color-cream-dark: #e2edf6;
 
-  /* Natural green family */
-  --color-forest: #2f5233;
-  --color-forest-dark: #22702c;
-  --color-blue-forest: #0c5192;
-  --color-orange-forest: #c06011;
-  --color-moss: #5c8a5c;
-  --color-sage: #dce9d5;
+  /* Trust blue family (primary) */
+  --color-forest: #0b5fa5;
+  --color-forest-dark: #073d6b;
+  --color-blue-forest: #0b5fa5;
+  --color-orange-forest: #f5a623;
+  --color-moss: #1e88e5;
+  --color-sage: #dceaf5;
 
-  /* Warm dairy accents */
-  --color-gold: #e8a34c;
-  --color-gold-light: #f3c88a;
-  --color-terracotta: #c9673d;
+  /* Amber accent (CTAs / highlights) */
+  --color-gold: #f5a623;
+  --color-gold-light: #f9c667;
+  --color-terracotta: #d9770b;
 
   /* Neutrals */
-  --color-charcoal: #2a2620;
-  --color-muted: #6b665c;
+  --color-charcoal: #16202b;
+  --color-muted: #5b6b7a;
   --color-white: #ffffff;
 
   /* Section rhythm */

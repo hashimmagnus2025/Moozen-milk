@@ -28,7 +28,7 @@ export default function SignatureProduct() {
             <div className="absolute inset-0 rounded-full border border-gold/25" />
             <div className="absolute inset-8 rounded-full border border-gold/15" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex size-52 items-center justify-center rounded-full bg-gradient-to-br from-gold via-gold-light to-cream shadow-[0_30px_80px_-16px_rgba(232,163,76,0.5)] sm:size-64">
+              <div className="flex size-52 items-center justify-center rounded-full bg-gradient-to-br from-gold via-gold-light to-cream shadow-[0_30px_80px_-16px_rgba(245,166,35,0.5)] sm:size-64">
                 <PiDropFill className="size-24 text-forest-dark" />
               </div>
             </div>

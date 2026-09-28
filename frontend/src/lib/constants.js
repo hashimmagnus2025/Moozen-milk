@@ -9,8 +9,8 @@ export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
   { label: "About", href: "/about" },
-  { label: "Recipes", href: "/recipes" },
-  { label: "Blogs", href: "/blogs" },
+  // { label: "Recipes", href: "/recipes" },
+  // { label: "Blogs", href: "/blogs" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -18,17 +18,17 @@ export const FOOTER_LINKS = {
   Shop: [
     { label: "All Products", href: "/products" },
     { label: "New Arrivals", href: "/products?filter=new" },
-    { label: "Recipes", href: "/recipes" },
+    // { label: "Recipes", href: "/recipes" },
   ],
   Company: [
     { label: "About Us", href: "/about" },
-    { label: "Journal", href: "/blogs" },
+    // { label: "Journal", href: "/blogs" },
     { label: "Contact", href: "/contact" },
   ],
   Support: [
     { label: "Contact Us", href: "/contact" },
     { label: "FAQ", href: "/faq" },
-    { label: "Become a Distributor", href: "/contact" },
+    // { label: "Become a Distributor", href: "/contact" },
   ],
 };
 

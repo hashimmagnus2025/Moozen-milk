@@ -15,9 +15,9 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#1B2F1E",
+          backgroundColor: "#073D6B",
           backgroundImage:
-            "radial-gradient(circle at 20% 20%, rgba(92,138,92,0.35), transparent 55%), radial-gradient(circle at 80% 75%, rgba(232,163,76,0.25), transparent 55%)",
+            "radial-gradient(circle at 20% 20%, rgba(30,136,229,0.35), transparent 55%), radial-gradient(circle at 80% 75%, rgba(245,166,35,0.25), transparent 55%)",
         }}
       >
         <div
@@ -27,19 +27,19 @@ export default async function Image() {
             justifyContent: "center",
             fontSize: 130,
             fontStyle: "italic",
-            color: "#FBF6EE",
+            color: "#FFFFFF",
             letterSpacing: "-2px",
           }}
         >
           Moozen
         </div>
-        <div style={{ display: "flex", width: 120, height: 3, backgroundColor: "#E8A34C", marginTop: 28 }} />
+        <div style={{ display: "flex", width: 120, height: 3, backgroundColor: "#F5A623", marginTop: 28 }} />
         <div
           style={{
             display: "flex",
             marginTop: 28,
             fontSize: 32,
-            color: "rgba(251,246,238,0.75)",
+            color: "rgba(255,255,255,0.75)",
             letterSpacing: "2px",
             textTransform: "uppercase",
           }}

@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, Leaf, ShieldCheck } from "lucide-react";
-import { PiDropFill } from "react-icons/pi";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { fadeUp, staggerContainer, imageReveal, textReveal } from "@/lib/animations";
@@ -86,7 +86,7 @@ export default function Hero() {
                 Explore Products
               </Button>
               <Button
-                href="/our-story"
+                href="/about"
                 variant="outline"
                 size="lg"
                 icon={false}
@@ -114,7 +114,7 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Signature visual — abstract product mark, no stock imagery needed */}
+          {/* Signature visual — hero product shot: Moozen Curd, 1 kg bucket */}
           <motion.div
             style={{ y: visualY }}
             className="relative mx-auto aspect-[4/5] w-full max-w-md"
@@ -125,16 +125,45 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-sage/90 via-cream to-gold-light/70 shadow-[0_40px_80px_-24px_rgba(0,0,0,0.5)]" />
             <div className="absolute inset-6 rounded-[2rem] border border-white/40" />
 
+            {/* Spotlight glow behind the product */}
+            <div
+              aria-hidden
+              className="absolute left-1/2 top-[42%] size-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/70 blur-[70px]"
+            />
+
+            {/* Ground shadow — stays put so the product reads as floating above it */}
+            <div
+              aria-hidden
+              className="absolute left-1/2 top-[78%] h-6 w-[46%] -translate-x-1/2 rounded-full bg-charcoal/25 blur-md"
+            />
+
             <motion.div
-              className="absolute left-1/2 top-1/2 flex size-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-forest-dark/90 shadow-2xl"
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute left-1/2 top-1/2 w-[95%] -translate-x-1/2 -translate-y-1/2"
+              initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
-              <PiDropFill className="size-16 text-gold" />
+              <motion.div
+                animate={{ y: [0, -16, 0], rotate: [-7, 7, -7] }}
+                transition={{
+                  y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                  rotate: { duration: 4.5, repeat: Infinity, ease: "easeInOut" },
+                }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <Image
+                  src="/media/products/crud-removebg-preview.png"
+                  alt="Moozen Curd — 1 kg bucket"
+                  width={500}
+                  height={500}
+                  priority
+                  className="h-auto w-full object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.35)]"
+                />
+              </motion.div>
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-xl"
+              className="absolute bottom-4 left-4 flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-xl"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -149,7 +178,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.div
-              className="absolute -top-6 -right-4 flex items-center gap-2 rounded-2xl bg-forest-dark px-4 py-3 text-cream shadow-xl"
+              className="absolute top-4 right-4 flex items-center gap-2 rounded-2xl bg-forest-dark px-4 py-3 text-cream shadow-xl"
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
             >
