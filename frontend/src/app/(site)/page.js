@@ -7,8 +7,9 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ProcessTimeline from "@/components/home/ProcessTimeline";
 import Stats from "@/components/home/Stats";
 import BrandStory from "@/components/home/BrandStory";
+import FarmScene from "@/components/home/FarmScene";
 import NewArrivals from "@/components/home/NewArrivals";
-import Recipes from "@/components/home/Recipes";
+// import Recipes from "@/components/home/Recipes";
 import Blogs from "@/components/home/Blogs";
 import Testimonials from "@/components/home/Testimonials";
 import Sustainability from "@/components/home/Sustainability";
@@ -30,8 +31,9 @@ export default async function Home() {
       <ProcessTimeline />
       <Stats />
       <BrandStory />
+      <FarmScene />
       <NewArrivals />
-      <Recipes />
+      {/* <Recipes /> */}
       <Blogs />
       <Testimonials />
       <Sustainability />
