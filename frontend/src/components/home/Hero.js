@@ -139,27 +139,23 @@ export default function Hero() {
 
             <motion.div
               className="absolute left-1/2 top-1/2 w-[95%] -translate-x-1/2 -translate-y-1/2"
-              initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0, y: 0, rotate: -8 }}
+              animate={{ opacity: 1, y: [0, -16, 0], rotate: [-10, 10, -10] }}
+              whileHover={{ scale: 1.05 }}
+              transition={{
+                opacity: { duration: 0.6, ease: "easeOut" },
+                y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              }}
             >
-              <motion.div
-                animate={{ y: [0, -16, 0], rotate: [-7, 7, -7] }}
-                transition={{
-                  y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-                  rotate: { duration: 4.5, repeat: Infinity, ease: "easeInOut" },
-                }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <Image
-                  src="/media/products/crud-removebg-preview.png"
-                  alt="Moozen Curd — 1 kg bucket"
-                  width={500}
-                  height={500}
-                  priority
-                  className="h-auto w-full object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.35)]"
-                />
-              </motion.div>
+              <Image
+                src="/media/products/crud-removebg-preview.png"
+                alt="Moozen Curd — 1 kg bucket"
+                width={500}
+                height={500}
+                priority
+                className="h-auto w-full object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.35)]"
+              />
             </motion.div>
 
             <motion.div
