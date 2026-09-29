@@ -139,23 +139,22 @@ export default function Hero() {
 
             <motion.div
               className="absolute left-1/2 top-1/2 w-[95%] -translate-x-1/2 -translate-y-1/2"
-              initial={{ opacity: 0, y: 0, rotate: -8 }}
-              animate={{ opacity: 1, y: [0, -16, 0], rotate: [-10, 10, -10] }}
-              whileHover={{ scale: 1.05 }}
-              transition={{
-                opacity: { duration: 0.6, ease: "easeOut" },
-                y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-                rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <Image
-                src="/media/products/crud-removebg-preview.png"
-                alt="Moozen Curd — 1 kg bucket"
-                width={500}
-                height={500}
-                priority
-                className="h-auto w-full object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.35)]"
-              />
+              <div className="animate-sway">
+                <div className="animate-float-slow transition-transform duration-300 hover:scale-105">
+                  <Image
+                    src="/media/products/crud-removebg-preview.png"
+                    alt="Moozen Curd — 1 kg bucket"
+                    width={500}
+                    height={500}
+                    priority
+                    className="h-auto w-full object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.35)]"
+                  />
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
