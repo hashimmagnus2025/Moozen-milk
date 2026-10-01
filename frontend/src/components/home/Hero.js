@@ -3,22 +3,24 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ChevronDown, Leaf, ShieldCheck } from "lucide-react";
+import { ChevronDown, Leaf } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import { fadeUp, staggerContainer, imageReveal, textReveal } from "@/lib/animations";
+import { fadeUp, staggerContainer, textReveal } from "@/lib/animations";
 
 const HEADLINE_LINE_1 = ["Purity,", "poured"];
 const HEADLINE_LINE_2 = ["straight", "from", "the", "source."];
 
 function RevealWord({ children }) {
   return (
-    <span className="inline-block overflow-hidden pb-2 align-top">
-      <motion.span className="inline-block" variants={textReveal}>
-        {children}
-        {" "}
-      </motion.span>
-    </span>
+    <>
+      <span className="inline-block overflow-hidden pb-2 align-top">
+        <motion.span className="inline-block" variants={textReveal}>
+          {children}
+        </motion.span>
+      </span>
+      {" "}
+    </>
   );
 }
 
@@ -29,27 +31,50 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "35%"]);
-  const visualY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-8%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-[100vh] items-center overflow-hidden bg-blue-forest text-cream"
+      className="relative flex min-h-[100vh] items-center overflow-hidden  text-cream"
     >
-      {/* Ambient organic gradients — parallaxed against scroll */}
-      <motion.div aria-hidden style={{ y: bgY }} className="pointer-events-none absolute inset-0">
+      {/* cow.svg as the hero backdrop — kept static (no scroll transform) since animating
+          a full-bleed image on every scroll frame was causing visible scroll jank */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <Image
+          src="/media/cow.svg"
+          alt=""
+          fill
+          priority
+        className="object-cover object-[0%_50%] translate-x-[8%] lg:translate-x-[14%] lg:scale-[0.7]"
+        />
+        {/* Dark gradient overlay so the text stays readable over the illustration —
+            eased off past mid-width so the cow keeps its own colour instead of
+            reading as a flat blue silhouette */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-forest via-blue-forest/60 to-blue-forest/10" />
+        {/* Solid strip behind the fixed navbar so the cow pattern doesn't bleed through it on scroll */}
+        <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-blue-forest via-blue-forest/60 to-transparent" />
+        {/* Gentle base-of-section fade so the scroll indicator stays legible regardless of the crop underneath */}
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-blue-forest/70 to-transparent" />
+      </div>
+
+      {/* Ambient blur blobs — kept static; animating blurred layers on scroll was the cause of the jank */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -left-32 top-[-10%] size-[32rem] rounded-full bg-moss/25 blur-[110px]" />
         <div className="absolute right-[-15%] top-1/3 size-[28rem] rounded-full bg-gold/20 blur-[120px]" />
-        <div className="absolute bottom-[-20%] left-1/4 size-[26rem] rounded-full bg-sage/10 blur-[100px]" />
         <div className="bg-noise absolute inset-0 opacity-[0.15]" />
-      </motion.div>
+      </div>
 
       <motion.div style={{ opacity: contentOpacity }}>
-        <Container className="relative grid items-center gap-16 pt-28 pb-20 lg:grid-cols-[1.1fr_0.9fr] lg:pt-32">
-          <motion.div style={{ y: contentY }} initial="hidden" animate="show" variants={staggerContainer(0.12, 0.1)}>
+        <Container className="relative pt-28 pb-20 lg:pt-32">
+          <motion.div
+            style={{ y: contentY }}
+            initial="hidden"
+            animate="show"
+            variants={staggerContainer(0.12, 0.1)}
+            className="max-w-2xl"
+          >
             <motion.span
               variants={fadeUp}
               className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold"
@@ -94,7 +119,7 @@ export default function Hero() {
               >
                 Our Story
               </Button>
-            </motion.div>
+            </motion.div> 
 
             <motion.div variants={fadeUp} className="mt-14 flex items-center gap-8 border-t border-white/10 pt-8">
               <div>
@@ -113,76 +138,10 @@ export default function Hero() {
               </div>
             </motion.div>
           </motion.div>
-
-          {/* Signature visual — hero product shot: Moozen Curd, 1 kg bucket */}
-          <motion.div
-            style={{ y: visualY }}
-            className="relative mx-auto aspect-[4/5] w-full max-w-md"
-            initial="hidden"
-            animate="show"
-            variants={imageReveal}
-          >
-            <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-sage/90 via-cream to-gold-light/70 shadow-[0_40px_80px_-24px_rgba(0,0,0,0.5)]" />
-            <div className="absolute inset-6 rounded-[2rem] border border-white/40" />
-
-            {/* Spotlight glow behind the product */}
-            <div
-              aria-hidden
-              className="absolute left-1/2 top-[42%] size-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/70 blur-[70px]"
-            />
-
-            {/* Ground shadow — stays put so the product reads as floating above it */}
-            <div
-              aria-hidden
-              className="absolute left-1/2 top-[78%] h-6 w-[46%] -translate-x-1/2 rounded-full bg-charcoal/25 blur-md"
-            />
-
-            <motion.div
-              className="absolute left-1/2 top-1/2 w-[95%] -translate-x-1/2 -translate-y-1/2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <div className="animate-sway">
-                <div className="animate-float-slow transition-transform duration-300 hover:scale-105">
-                  <Image
-                    src="/media/products/crud-removebg-preview.png"
-                    alt="Moozen Curd — 1 kg bucket"
-                    width={500}
-                    height={500}
-                    priority
-                    className="h-auto w-full object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.35)]"
-                  />
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="absolute bottom-4 left-4 flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-xl"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <span className="flex size-10 items-center justify-center rounded-full bg-sage text-forest">
-                <Leaf className="size-5" strokeWidth={2} />
-              </span>
-              <div>
-                <p className="text-sm font-semibold text-forest-dark">100% Farm Fresh</p>
-                <p className="text-xs text-muted">No preservatives, ever</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="absolute top-4 right-4 flex items-center gap-2 rounded-2xl bg-forest-dark px-4 py-3 text-cream shadow-xl"
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            >
-              <ShieldCheck className="size-4 text-gold" strokeWidth={2} />
-              <p className="text-xs font-semibold">Lab-Tested Daily</p>
-            </motion.div>
-          </motion.div>
         </Container>
       </motion.div>
+
+
 
       <motion.div
         className="absolute inset-x-0 bottom-8 flex flex-col items-center gap-2"
