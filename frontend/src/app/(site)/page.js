@@ -21,7 +21,7 @@ export default async function Home() {
   const categories = await safeFetch(getAllCategories(), []);
 
   return (
-    <>
+    <div style={{ animation: "page-in 0.7s ease-out both" }}>
       <Hero />
       <BrandIntro />
       <ProductCategories categories={categories} />
@@ -38,6 +38,6 @@ export default async function Home() {
       <Testimonials />
       <Sustainability />
       <FinalCta />
-    </>
+    </div>
   );
 }

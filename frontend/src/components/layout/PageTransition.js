@@ -5,11 +5,11 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 
 const variants = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { opacity: 0, y: 16 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
