@@ -11,7 +11,7 @@
       <stop offset="1" stop-color="#5fa83a"/>
     </linearGradient>
     <clipPath id="bodyClip">
-      <path d="M300 215 C300 160 380 150 470 150 C580 150 680 165 680 255 C680 330 620 365 520 368 C430 370 330 365 300 300 Z"/>
+      <path d="M300 192 C300 166 330 160 385 160 L585 160 C640 160 666 186 666 238 C666 288 640 322 590 324 L360 324 C322 324 300 302 300 262 Z"/>
     </clipPath>
   </defs>
 
@@ -20,7 +20,7 @@
     .cloud.slow { animation-duration: 42s; animation-delay: -12s; }
     @keyframes drift { from { transform: translateX(-60px); } to { transform: translateX(60px); } }
 
-    .head { transform-box: view-box; transform-origin: 330px 215px; animation: graze 3.2s ease-in-out infinite; }
+    .head { transform-box: view-box; transform-origin: 340px 200px; animation: graze 3.2s ease-in-out infinite; }
     @keyframes graze {
       0%, 100% { transform: rotate(0deg); }
       25% { transform: rotate(4deg); }
@@ -32,11 +32,11 @@
     .mouthGrass { transform-box: fill-box; transform-origin: 50% 100%; animation: munch 0.55s ease-in-out infinite; }
     @keyframes munch { 0%, 100% { transform: rotate(-6deg) scaleY(1); } 50% { transform: rotate(6deg) scaleY(0.82); } }
 
-    .tail { transform-box: view-box; transform-origin: 676px 225px; animation: swish 2.4s ease-in-out infinite; }
+    .tail { transform-box: view-box; transform-origin: 662px 196px; animation: swish 2.4s ease-in-out infinite; }
     @keyframes swish { 0%, 100% { transform: rotate(7deg); } 50% { transform: rotate(-9deg); } }
 
-    .ear { transform-box: fill-box; transform-origin: 100% 50%; animation: flick 4.2s ease-in-out infinite; }
-    @keyframes flick { 0%, 86%, 100% { transform: rotate(0deg); } 90% { transform: rotate(-16deg); } 94% { transform: rotate(4deg); } }
+    .ear { transform-box: fill-box; transform-origin: 0% 50%; animation: flick 4.2s ease-in-out infinite; }
+    @keyframes flick { 0%, 86%, 100% { transform: rotate(0deg); } 90% { transform: rotate(-18deg); } 94% { transform: rotate(4deg); } }
 
     .bell { transform-box: fill-box; transform-origin: 50% 0%; animation: ring 1.6s ease-in-out infinite; }
     @keyframes ring { 0%, 100% { transform: rotate(8deg); } 50% { transform: rotate(-8deg); } }
@@ -49,7 +49,7 @@
     .tuft:nth-of-type(3n) { animation-duration: 2.6s; animation-delay: -1.8s; }
     @keyframes sway { 0%, 100% { transform: skewX(-4deg); } 50% { transform: skewX(4deg); } }
 
-    .breathe { transform-box: view-box; transform-origin: 490px 360px; animation: breathe 3.2s ease-in-out infinite; }
+    .breathe { transform-box: view-box; transform-origin: 480px 324px; animation: breathe 3.2s ease-in-out infinite; }
     @keyframes breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.012); } }
 
     @media (prefers-reduced-motion: reduce) {
@@ -77,82 +77,82 @@
   </g>
 
   <!-- Ground shadow -->
-  <ellipse cx="480" cy="440" rx="230" ry="16" fill="#2f6b2a" opacity="0.28"/>
+  <ellipse cx="480" cy="446" rx="230" ry="13" fill="#2f6b2a" opacity="0.28"/>
 
   <!-- Far legs -->
-  <g fill="#cfcfd2">
-    <rect x="362" y="340" width="34" height="100" rx="14"/>
-    <rect x="610" y="340" width="34" height="100" rx="14"/>
+  <g fill="#d6d6da">
+    <path d="M372 305 L398 305 L395 424 L376 424 Z"/>
+    <path d="M566 305 L592 305 L589 424 L570 424 Z"/>
   </g>
   <g fill="#3a3340">
-    <path d="M362 428 h34 v12 a6 6 0 0 1 -6 6 h-22 a6 6 0 0 1 -6 -6 z"/>
-    <path d="M610 428 h34 v12 a6 6 0 0 1 -6 6 h-22 a6 6 0 0 1 -6 -6 z"/>
+    <path d="M375 424 h20 v14 a5 5 0 0 1 -5 5 h-10 a5 5 0 0 1 -5 -5 z"/>
+    <path d="M569 424 h20 v14 a5 5 0 0 1 -5 5 h-10 a5 5 0 0 1 -5 -5 z"/>
   </g>
 
   <!-- Tail -->
   <g class="tail">
-    <path d="M676 225 C706 235 716 280 708 336" fill="none" stroke="#f3eee6" stroke-width="9" stroke-linecap="round"/>
-    <path d="M708 322 C694 340 696 368 708 380 C722 368 724 340 708 322 Z" fill="#2d2830"/>
+    <path d="M662 196 C690 206 698 250 692 318" fill="none" stroke="#f3eee6" stroke-width="8" stroke-linecap="round"/>
+    <path d="M692 306 C680 324 681 350 692 364 C704 350 706 324 692 306 Z" fill="#2d2830"/>
   </g>
 
   <!-- Body -->
   <g class="breathe">
-    <path d="M300 215 C300 160 380 150 470 150 C580 150 680 165 680 255 C680 330 620 365 520 368 C430 370 330 365 300 300 Z" fill="#fbf7ef"/>
+    <path d="M300 192 C300 166 330 160 385 160 L585 160 C640 160 666 186 666 238 C666 288 640 322 590 324 L360 324 C322 324 300 302 300 262 Z" fill="#fbf7ef"/>
     <g clip-path="url(#bodyClip)" fill="#2d2830">
-      <path d="M390 150 C440 150 470 180 450 215 C430 245 380 235 372 200 C366 175 372 155 390 150 Z"/>
-      <path d="M560 150 C620 150 690 170 690 215 C690 250 640 240 610 225 C575 210 540 175 560 150 Z"/>
-      <path d="M520 290 C560 275 610 290 600 325 C590 355 520 370 505 335 C498 312 502 297 520 290 Z"/>
-      <path d="M300 280 C330 270 360 290 350 320 C340 345 300 340 296 310 Z"/>
+      <path d="M400 160 C450 160 480 190 462 226 C444 256 396 246 388 212 C382 186 386 164 400 160 Z"/>
+      <path d="M560 160 C620 160 680 176 680 222 C680 256 632 246 604 232 C572 216 540 184 560 160 Z"/>
+      <path d="M470 282 C510 266 560 280 552 312 C544 340 482 346 466 316 C460 300 460 290 470 282 Z"/>
+      <path d="M296 262 C326 252 352 270 344 300 C336 322 298 318 294 290 Z"/>
     </g>
     <!-- Udder -->
-    <path d="M498 360 C498 394 540 394 540 360 Z" fill="#f4a9b0"/>
-    <path d="M508 386 v10 M530 386 v10" stroke="#e98e98" stroke-width="5" stroke-linecap="round"/>
+    <path d="M524 322 C522 352 560 352 560 322 Z" fill="#f4a9b0"/>
+    <path d="M532 346 v9 M552 346 v9" stroke="#e98e98" stroke-width="5" stroke-linecap="round"/>
   </g>
 
   <!-- Near legs -->
   <g fill="#fbf7ef">
-    <rect x="404" y="342" width="38" height="98" rx="15"/>
-    <rect x="574" y="338" width="38" height="102" rx="15"/>
+    <path d="M330 305 L358 305 L354 424 L334 424 Z"/>
+    <path d="M598 305 L626 305 L622 424 L602 424 Z"/>
   </g>
   <g fill="#2d2830">
-        <path d="M404 426 h38 v14 a7 7 0 0 1 -7 7 h-24 a7 7 0 0 1 -7 -7 z"/>
-    <path d="M574 424 h38 v16 a7 7 0 0 1 -7 7 h-24 a7 7 0 0 1 -7 -7 z"/>
+    <path d="M333 424 h22 v14 a5 5 0 0 1 -5 5 h-12 a5 5 0 0 1 -5 -5 z"/>
+    <path d="M601 424 h22 v14 a5 5 0 0 1 -5 5 h-12 a5 5 0 0 1 -5 -5 z"/>
   </g>
 
   <!-- Head + neck (grazing) -->
   <g class="head">
-    <path d="M338 168 C292 170 250 215 226 275 C206 322 186 342 186 378 C186 408 214 424 246 418 C282 411 300 386 308 356 C324 326 352 318 364 296 L366 180 Z" fill="#fbf7ef"/>
+    <path d="M340 164 C292 168 264 205 254 250 C244 285 224 316 207 348 C198 366 198 386 214 392 C234 398 252 388 260 372 C274 346 292 332 314 326 L342 322 L352 190 Z" fill="#fbf7ef"/>
     <!-- Head patch -->
-    <path d="M300 190 C270 200 246 232 232 266 C262 262 292 246 310 224 Z" fill="#2d2830"/>
+    <path d="M300 182 C274 196 260 226 254 252 C246 282 232 302 224 322 C250 318 276 292 288 262 C298 238 306 210 300 182 Z" fill="#2d2830"/>
     <!-- Horn + ear -->
-    <path d="M300 186 C292 168 300 156 312 150 C312 166 310 176 314 186 Z" fill="#e9dcc2"/>
+    <path d="M276 232 C268 214 274 200 286 194 C286 210 284 220 290 232 Z" fill="#e9dcc2"/>
     <g class="ear">
-      <ellipse cx="286" cy="226" rx="30" ry="14" transform="rotate(-24 286 226)" fill="#2d2830"/>
-      <ellipse cx="288" cy="227" rx="21" ry="8" transform="rotate(-24 288 227)" fill="#f4a9b0"/>
+      <ellipse cx="286" cy="252" rx="28" ry="11" transform="rotate(8 286 252)" fill="#2d2830"/>
+      <ellipse cx="288" cy="253" rx="19" ry="6.5" transform="rotate(8 288 253)" fill="#f4a9b0"/>
     </g>
     <!-- Eye -->
     <g class="blink">
-      <ellipse cx="248" cy="322" rx="13" ry="14" fill="#fff"/>
-      <circle cx="246" cy="325" r="7.5" fill="#2d2830"/>
-      <circle cx="243" cy="321" r="2.6" fill="#fff"/>
+      <ellipse cx="243" cy="296" rx="9" ry="10" fill="#fff"/>
+      <circle cx="242" cy="298" r="5.5" fill="#2d2830"/>
+      <circle cx="240" cy="295" r="1.9" fill="#fff"/>
     </g>
     <!-- Collar + bell -->
-    <path d="M298 300 C316 316 336 318 358 306" fill="none" stroke="#8a5a32" stroke-width="13" stroke-linecap="round"/>
+    <path d="M268 292 C284 312 304 322 326 320" fill="none" stroke="#8a5a32" stroke-width="12" stroke-linecap="round"/>
     <g class="bell">
-      <path d="M322 320 h22 l4 20 h-30 z" fill="#f5a623"/>
-      <circle cx="333" cy="342" r="3.6" fill="#a8680a"/>
+      <path d="M290 322 h20 l4 18 h-28 z" fill="#f5a623"/>
+      <circle cx="300" cy="342" r="3.4" fill="#a8680a"/>
     </g>
     <!-- Muzzle (chews) -->
     <g class="chew">
-      <ellipse cx="216" cy="402" rx="40" ry="24" transform="rotate(-18 216 402)" fill="#f4a9b0"/>
-      <ellipse cx="200" cy="396" rx="5.5" ry="7" transform="rotate(-18 200 396)" fill="#c97a86"/>
-      <path d="M214 418 C226 424 240 424 252 418" fill="none" stroke="#c97a86" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="217" cy="380" rx="27" ry="19" transform="rotate(24 217 380)" fill="#f4a9b0"/>
+      <ellipse cx="206" cy="372" rx="4" ry="5.5" transform="rotate(24 206 372)" fill="#c97a86"/>
+      <path d="M222 396 C232 398 242 394 249 388" fill="none" stroke="#c97a86" stroke-width="2.6" stroke-linecap="round"/>
     </g>
     <!-- Grass in mouth -->
     <g class="mouthGrass" stroke="#4f9a2c" stroke-width="4" stroke-linecap="round" fill="none">
-      <path d="M206 424 C200 440 196 452 192 462"/>
-      <path d="M222 426 C222 442 224 454 228 464"/>
-      <path d="M236 422 C244 438 252 448 262 456"/>
+      <path d="M214 398 C208 416 204 428 200 438"/>
+      <path d="M228 400 C228 416 230 428 234 438"/>
+      <path d="M242 394 C250 410 258 422 268 430"/>
     </g>
   </g>
 
