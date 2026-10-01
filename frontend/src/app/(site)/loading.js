@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { PiDropFill } from "react-icons/pi";
 
 /**
  * Homepage route loader. Uses the same cream base + soft glows as the hero so
@@ -20,36 +19,17 @@ export default function HomeLoading() {
       </div>
 
       <div
-        className="relative flex flex-col items-center gap-7"
+        className="relative flex flex-col items-center gap-5"
         style={{ animation: "loader-in 0.6s cubic-bezier(0.22,1,0.36,1) 0.2s both" }}
       >
-        <div className="relative flex size-24 items-center justify-center">
-          <span
-            aria-hidden
-            className="absolute inset-0 rounded-full border border-forest/25"
-            style={{ animation: "loader-ripple 2.2s ease-out infinite" }}
-          />
-          <span
-            aria-hidden
-            className="absolute inset-0 rounded-full border border-forest/25"
-            style={{ animation: "loader-ripple 2.2s ease-out 1.1s infinite" }}
-          />
-          <span
-            className="flex size-16 items-center justify-center rounded-full bg-white shadow-[0_18px_40px_-16px_rgba(11,95,165,0.45)]"
-            style={{ animation: "loader-drop 2.2s ease-in-out infinite" }}
-          >
-            <PiDropFill className="size-8 text-forest" />
-          </span>
-        </div>
-
         <div className="flex flex-col items-center gap-3">
           <Image
             src="/media/logo/Moozen-logo.png"
             alt="Moozen"
-            width={180}
-            height={90}
+            width={260}
+            height={130}
             priority
-            className="h-auto w-[150px] object-contain mix-blend-multiply"
+            className="h-auto w-[200px] sm:w-[260px] object-contain mix-blend-multiply"
           />
           <span className="relative h-[3px] w-24 overflow-hidden rounded-full bg-forest/10">
             <span
