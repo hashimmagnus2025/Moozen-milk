@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PiDropFill } from "react-icons/pi";
 
 /**
@@ -42,7 +43,14 @@ export default function HomeLoading() {
         </div>
 
         <div className="flex flex-col items-center gap-3">
-          <span className="font-display text-3xl italic tracking-tight text-forest-dark">Moozen</span>
+          <Image
+            src="/media/logo/Moozen-logo.png"
+            alt="Moozen"
+            width={180}
+            height={90}
+            priority
+            className="h-auto w-[150px] object-contain mix-blend-multiply"
+          />
           <span className="relative h-[3px] w-24 overflow-hidden rounded-full bg-forest/10">
             <span
               className="absolute inset-y-0 left-0 w-1/3 rounded-full bg-gold"
