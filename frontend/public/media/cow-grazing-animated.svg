@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="A cow grazing on a green pasture">
+  <title>Grazing cow</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8ecf8"/>
+      <stop offset="1" stop-color="#f7f4e8"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fcf5a"/>
+      <stop offset="1" stop-color="#5fa83a"/>
+    </linearGradient>
+    <clipPath id="bodyClip">
+      <path d="M300 215 C300 160 380 150 470 150 C580 150 680 165 680 255 C680 330 620 365 520 368 C430 370 330 365 300 300 Z"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .cloud { animation: drift 28s linear infinite; }
+    .cloud.slow { animation-duration: 42s; animation-delay: -12s; }
+    @keyframes drift { from { transform: translateX(-60px); } to { transform: translateX(60px); } }
+
+    .head { transform-box: view-box; transform-origin: 330px 215px; animation: graze 3.2s ease-in-out infinite; }
+    @keyframes graze {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(4deg); }
+      55% { transform: rotate(-2deg); }
+    }
+    .chew { animation: chew 0.55s ease-in-out infinite; }
+    @keyframes chew { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(3.5px); } }
+
+    .mouthGrass { transform-box: fill-box; transform-origin: 50% 100%; animation: munch 0.55s ease-in-out infinite; }
+    @keyframes munch { 0%, 100% { transform: rotate(-6deg) scaleY(1); } 50% { transform: rotate(6deg) scaleY(0.82); } }
+
+    .tail { transform-box: view-box; transform-origin: 676px 225px; animation: swish 2.4s ease-in-out infinite; }
+    @keyframes swish { 0%, 100% { transform: rotate(7deg); } 50% { transform: rotate(-9deg); } }
+
+    .ear { transform-box: fill-box; transform-origin: 100% 50%; animation: flick 4.2s ease-in-out infinite; }
+    @keyframes flick { 0%, 86%, 100% { transform: rotate(0deg); } 90% { transform: rotate(-16deg); } 94% { transform: rotate(4deg); } }
+
+    .bell { transform-box: fill-box; transform-origin: 50% 0%; animation: ring 1.6s ease-in-out infinite; }
+    @keyframes ring { 0%, 100% { transform: rotate(8deg); } 50% { transform: rotate(-8deg); } }
+
+    .blink { transform-box: fill-box; transform-origin: 50% 50%; animation: blink 5s infinite; }
+    @keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.1); } }
+
+    .tuft { transform-box: fill-box; transform-origin: 50% 100%; animation: sway 3s ease-in-out infinite; }
+    .tuft:nth-of-type(2n) { animation-duration: 3.7s; animation-delay: -1s; }
+    .tuft:nth-of-type(3n) { animation-duration: 2.6s; animation-delay: -1.8s; }
+    @keyframes sway { 0%, 100% { transform: skewX(-4deg); } 50% { transform: skewX(4deg); } }
+
+    .breathe { transform-box: view-box; transform-origin: 490px 360px; animation: breathe 3.2s ease-in-out infinite; }
+    @keyframes breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.012); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+
+  <!-- Sky + scenery -->
+  <rect width="800" height="520" fill="url(#sky)"/>
+  <g class="cloud" fill="#fff" opacity="0.9">
+    <ellipse cx="150" cy="80" rx="52" ry="20"/><ellipse cx="190" cy="68" rx="38" ry="22"/><ellipse cx="118" cy="72" rx="30" ry="16"/>
+  </g>
+  <g class="cloud slow" fill="#fff" opacity="0.8">
+    <ellipse cx="640" cy="120" rx="46" ry="16"/><ellipse cx="672" cy="108" rx="32" ry="18"/><ellipse cx="610" cy="114" rx="26" ry="13"/>
+  </g>
+  <path d="M0 330 C140 270 260 290 400 320 C540 350 660 290 800 310 L800 520 L0 520 Z" fill="#a9d97a"/>
+  <path d="M0 370 C160 330 320 350 460 372 C600 392 700 350 800 360 L800 520 L0 520 Z" fill="url(#field)"/>
+
+  <!-- Fence -->
+  <g fill="#b9824a">
+    <rect x="40" y="318" width="9" height="62" rx="2"/><rect x="150" y="320" width="9" height="62" rx="2"/>
+    <rect x="690" y="312" width="9" height="62" rx="2"/><rect x="760" y="316" width="9" height="62" rx="2"/>
+    <rect x="30" y="334" width="150" height="8" rx="3"/><rect x="30" y="356" width="150" height="8" rx="3"/>
+    <rect x="680" y="328" width="110" height="8" rx="3"/><rect x="680" y="350" width="110" height="8" rx="3"/>
+  </g>
+
+  <!-- Ground shadow -->
+  <ellipse cx="480" cy="440" rx="230" ry="16" fill="#2f6b2a" opacity="0.28"/>
+
+  <!-- Far legs -->
+  <g fill="#cfcfd2">
+    <rect x="362" y="340" width="34" height="100" rx="14"/>
+    <rect x="610" y="340" width="34" height="100" rx="14"/>
+  </g>
+  <g fill="#3a3340">
+    <path d="M362 428 h34 v12 a6 6 0 0 1 -6 6 h-22 a6 6 0 0 1 -6 -6 z"/>
+    <path d="M610 428 h34 v12 a6 6 0 0 1 -6 6 h-22 a6 6 0 0 1 -6 -6 z"/>
+  </g>
+
+  <!-- Tail -->
+  <g class="tail">
+    <path d="M676 225 C706 235 716 280 708 336" fill="none" stroke="#f3eee6" stroke-width="9" stroke-linecap="round"/>
+    <path d="M708 322 C694 340 696 368 708 380 C722 368 724 340 708 322 Z" fill="#2d2830"/>
+  </g>
+
+  <!-- Body -->
+  <g class="breathe">
+    <path d="M300 215 C300 160 380 150 470 150 C580 150 680 165 680 255 C680 330 620 365 520 368 C430 370 330 365 300 300 Z" fill="#fbf7ef"/>
+    <g clip-path="url(#bodyClip)" fill="#2d2830">
+      <path d="M390 150 C440 150 470 180 450 215 C430 245 380 235 372 200 C366 175 372 155 390 150 Z"/>
+      <path d="M560 150 C620 150 690 170 690 215 C690 250 640 240 610 225 C575 210 540 175 560 150 Z"/>
+      <path d="M520 290 C560 275 610 290 600 325 C590 355 520 370 505 335 C498 312 502 297 520 290 Z"/>
+      <path d="M300 280 C330 270 360 290 350 320 C340 345 300 340 296 310 Z"/>
+    </g>
+    <!-- Udder -->
+    <path d="M498 360 C498 394 540 394 540 360 Z" fill="#f4a9b0"/>
+    <path d="M508 386 v10 M530 386 v10" stroke="#e98e98" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Near legs -->
+  <g fill="#fbf7ef">
+    <rect x="404" y="342" width="38" height="98" rx="15"/>
+    <rect x="574" y="338" width="38" height="102" rx="15"/>
+  </g>
+  <g fill="#2d2830">
+        <path d="M404 426 h38 v14 a7 7 0 0 1 -7 7 h-24 a7 7 0 0 1 -7 -7 z"/>
+    <path d="M574 424 h38 v16 a7 7 0 0 1 -7 7 h-24 a7 7 0 0 1 -7 -7 z"/>
+  </g>
+
+  <!-- Head + neck (grazing) -->
+  <g class="head">
+    <path d="M338 168 C292 170 250 215 226 275 C206 322 186 342 186 378 C186 408 214 424 246 418 C282 411 300 386 308 356 C324 326 352 318 364 296 L366 180 Z" fill="#fbf7ef"/>
+    <!-- Head patch -->
+    <path d="M300 190 C270 200 246 232 232 266 C262 262 292 246 310 224 Z" fill="#2d2830"/>
+    <!-- Horn + ear -->
+    <path d="M300 186 C292 168 300 156 312 150 C312 166 310 176 314 186 Z" fill="#e9dcc2"/>
+    <g class="ear">
+      <ellipse cx="286" cy="226" rx="30" ry="14" transform="rotate(-24 286 226)" fill="#2d2830"/>
+      <ellipse cx="288" cy="227" rx="21" ry="8" transform="rotate(-24 288 227)" fill="#f4a9b0"/>
+    </g>
+    <!-- Eye -->
+    <g class="blink">
+      <ellipse cx="248" cy="322" rx="13" ry="14" fill="#fff"/>
+      <circle cx="246" cy="325" r="7.5" fill="#2d2830"/>
+      <circle cx="243" cy="321" r="2.6" fill="#fff"/>
+    </g>
+    <!-- Collar + bell -->
+    <path d="M298 300 C316 316 336 318 358 306" fill="none" stroke="#8a5a32" stroke-width="13" stroke-linecap="round"/>
+    <g class="bell">
+      <path d="M322 320 h22 l4 20 h-30 z" fill="#f5a623"/>
+      <circle cx="333" cy="342" r="3.6" fill="#a8680a"/>
+    </g>
+    <!-- Muzzle (chews) -->
+    <g class="chew">
+      <ellipse cx="216" cy="402" rx="40" ry="24" transform="rotate(-18 216 402)" fill="#f4a9b0"/>
+      <ellipse cx="200" cy="396" rx="5.5" ry="7" transform="rotate(-18 200 396)" fill="#c97a86"/>
+      <path d="M214 418 C226 424 240 424 252 418" fill="none" stroke="#c97a86" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <!-- Grass in mouth -->
+    <g class="mouthGrass" stroke="#4f9a2c" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M206 424 C200 440 196 452 192 462"/>
+      <path d="M222 426 C222 442 224 454 228 464"/>
+      <path d="M236 422 C244 438 252 448 262 456"/>
+    </g>
+  </g>
+
+  <!-- Foreground grass -->
+  <path d="M0 450 C120 436 260 452 400 448 C540 444 680 454 800 440 L800 520 L0 520 Z" fill="#6cb644"/>
+  <g stroke-linecap="round" fill="none">
+    <g class="tuft" stroke="#3f8a24" stroke-width="6"><path d="M130 470 l-12 -42 M130 470 l4 -48 M130 470 l16 -40"/></g>
+    <g class="tuft" stroke="#4f9a2c" stroke-width="6"><path d="M260 480 l-12 -44 M260 480 l2 -50 M260 480 l14 -42"/></g>
+    <g class="tuft" stroke="#3f8a24" stroke-width="6"><path d="M380 474 l-10 -40 M380 474 l4 -46 M380 474 l14 -38"/></g>
+    <g class="tuft" stroke="#4f9a2c" stroke-width="6"><path d="M520 482 l-12 -42 M520 482 l2 -48 M520 482 l14 -40"/></g>
+    <g class="tuft" stroke="#3f8a24" stroke-width="6"><path d="M650 472 l-10 -40 M650 472 l4 -46 M650 472 l14 -38"/></g>
+    <g class="tuft" stroke="#4f9a2c" stroke-width="6"><path d="M740 484 l-10 -38 M740 484 l4 -44 M740 484 l12 -36"/></g>
+  </g>
+  <g fill="#fff"><circle cx="90" cy="500" r="4"/><circle cx="330" cy="505" r="3.5"/><circle cx="590" cy="500" r="4"/></g>
+  <g fill="#f5a623"><circle cx="90" cy="500" r="1.6"/><circle cx="330" cy="505" r="1.4"/><circle cx="590" cy="500" r="1.6"/></g>
+</svg>
