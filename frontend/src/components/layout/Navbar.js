@@ -41,7 +41,7 @@ export default function Navbar() {
           "fixed inset-x-0 top-0 z-50 transition-colors duration-500",
           isTransparent
             ? "bg-[#EBE9DA]"
-            : "glass-nav border-b border-cream-dark/60 bg-cream/85 shadow-[0_8px_30px_-20px_rgba(42,38,32,0.4)]"
+            : "border-b border-cream-dark/60 bg-cream shadow-[0_8px_30px_-20px_rgba(42,38,32,0.4)]"
         )}
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

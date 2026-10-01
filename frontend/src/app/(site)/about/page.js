@@ -8,7 +8,7 @@ import Card, { CardEyebrow, CardTitle, CardText } from "@/components/ui/Card";
 import Counter from "@/components/ui/Counter";
 import FinalCta from "@/components/home/FinalCta";
 import { fadeUp, slideIn, scaleIn } from "@/lib/animations";
-
+import Image from "next/image";
 export const metadata = {
   title: "About Us — Moozen",
   description:
@@ -44,6 +44,17 @@ export default function AboutPage() {
 
       <Section background="cream">
         <div className="grid gap-14 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+
+
+
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
+
+            <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-forest via-forest-dark to-moss/70 shadow-[0_30px_70px_-24px_rgba(27,47,30,0.45)]" />
+            <div aria-hidden className="bg-noise absolute inset-0 rounded-[2rem] opacity-15" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <GiFamilyTree className="size-40 text-gold/70 sm:size-52" />
+            </div>
+          </div>
           <Reveal variants={slideIn("left")}>
             <CardEyebrow>Our Mission</CardEyebrow>
             <h2 className="mt-5 text-balance-pretty font-display text-4xl italic leading-[1.08] text-forest-dark sm:text-5xl">
@@ -57,13 +68,7 @@ export default function AboutPage() {
             </p>
           </Reveal>
 
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
-            <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-forest via-forest-dark to-moss/70 shadow-[0_30px_70px_-24px_rgba(27,47,30,0.45)]" />
-            <div aria-hidden className="bg-noise absolute inset-0 rounded-[2rem] opacity-15" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <GiFamilyTree className="size-40 text-gold/70 sm:size-52" />
-            </div>
-          </div>
+
         </div>
       </Section>
 
