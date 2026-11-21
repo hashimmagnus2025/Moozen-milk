@@ -23,9 +23,28 @@ app.use(
     crossOriginResourcePolicy: { policy: "cross-origin" },
   })
 );
+// Allow the known frontends (local dev + deployed Vercel site). CLIENT_URL
+// may be a single URL or a comma-separated list; everything is merged with a
+// couple of sensible defaults so a missing/incomplete env var can't silently
+// lock the real frontend out via CORS.
+const allowedOrigins = [
+  ...String(env.clientUrl || "")
+    .split(",")
+    .map((o) => o.trim())
+    .filter(Boolean),
+  "http://localhost:3000",
+  "https://moozen-milk-fr3t.vercel.app",
+];
+
 app.use(
   cors({
-    origin: env.clientUrl,
+    origin(origin, callback) {
+      // Non-browser requests (curl, server-to-server) have no Origin header.
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error(`Origin not allowed by CORS: ${origin}`));
+    },
     credentials: true,
   })
 );
