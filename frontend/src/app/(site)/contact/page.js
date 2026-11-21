@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import PageHeader from "@/components/shared/PageHeader";
 import Section from "@/components/ui/Section";
@@ -42,6 +43,15 @@ export default function ContactPage() {
       <Section background="cream" className="pt-14 lg:pt-16">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <Reveal variants={slideIn("left")} className="flex flex-col gap-5">
+            <div className="relative mx-auto aspect-square w-40 sm:w-44">
+              <Image
+                src="/media/mascot-thumbsup.png"
+                alt="Moozen mascot waving a friendly hello"
+                fill
+                sizes="176px"
+                className="object-contain"
+              />
+            </div>
             {CONTACT_DETAILS.map(({ icon: Icon, title, text }) => (
               <Card key={title} tone="solid" hover={false} className="flex items-start gap-4 p-5">
                 <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-sage text-forest">

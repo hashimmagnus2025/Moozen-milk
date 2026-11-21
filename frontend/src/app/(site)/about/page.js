@@ -1,5 +1,4 @@
 import { Leaf, ShieldCheck, HeartHandshake, Recycle, Sprout, Sun } from "lucide-react";
-import { GiFamilyTree } from "react-icons/gi";
 import { PiDropFill } from "react-icons/pi";
 import PageHeader from "@/components/shared/PageHeader";
 import Section from "@/components/ui/Section";
@@ -49,11 +48,15 @@ export default function AboutPage() {
 
           <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
 
-            <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-forest via-forest-dark to-moss/70 shadow-[0_30px_70px_-24px_rgba(27,47,30,0.45)]" />
+            <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-sage via-cream to-gold-light/60 shadow-[0_30px_70px_-24px_rgba(27,47,30,0.35)]" />
             <div aria-hidden className="bg-noise absolute inset-0 rounded-[2rem] opacity-15" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <GiFamilyTree className="size-40 text-gold/70 sm:size-52" />
-            </div>
+            <Image
+              src="/media/mascot-thumbsup.png"
+              alt="Moozen mascot cheering with two thumbs up"
+              fill
+              sizes="(max-width: 1024px) 80vw, 400px"
+              className="object-contain p-8"
+            />
           </div>
           <Reveal variants={slideIn("left")}>
             <CardEyebrow>Our Mission</CardEyebrow>
@@ -145,7 +148,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <FinalCta />
+      <FinalCta mascot={false} />
     </>
   );
 }

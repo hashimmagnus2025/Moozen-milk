@@ -1,10 +1,11 @@
+import Image from "next/image";
 import { Leaf } from "lucide-react";
 import Section from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
 import { scaleIn } from "@/lib/animations";
 
-export default function FinalCta() {
+export default function FinalCta({ mascot = true }) {
   return (
     <Section background="cream">
       <Reveal
@@ -12,6 +13,20 @@ export default function FinalCta() {
         className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-sage via-cream to-gold-light/60 px-8 py-16 text-center sm:px-16 sm:py-24"
       >
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-noise opacity-40" />
+        {mascot && (
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-4 right-0 hidden w-52 lg:block xl:w-64"
+          >
+            <Image
+              src="/media/mascot-thumbsup.png"
+              alt=""
+              width={300}
+              height={380}
+              className="h-auto w-full object-contain drop-shadow-[0_18px_30px_rgba(27,47,30,0.18)]"
+            />
+          </div>
+        )}
         <span className="relative mx-auto flex size-14 items-center justify-center rounded-full bg-forest text-cream">
           <Leaf className="size-6" strokeWidth={1.75} />
         </span>
