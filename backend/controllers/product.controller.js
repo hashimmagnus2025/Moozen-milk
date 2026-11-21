@@ -72,7 +72,7 @@ const getProductBySlug = asyncHandler(async (req, res) => {
   sendResponse(res, 200, product);
 });
 
-// POST /api/products
+// POST /api/products   
 const createProduct = asyncHandler(async (req, res) => {
   const body = { ...req.body };
   ["ingredients", "benefits", "nutrition", "packSizes"].forEach((field) => {
