@@ -2,9 +2,9 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { GiFamilyTree } from "react-icons/gi";
 import Container from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { slideIn, fadeUp } from "@/lib/animations";
@@ -42,15 +42,15 @@ export default function BrandStory() {
           </motion.div>
         </Reveal>
 
-        <div className="relative order-1 aspect-[4/5] overflow-hidden rounded-[2.5rem] lg:order-2">
-          <motion.div
-            style={{ y: imgY }}
-            className="absolute inset-[-8%] bg-gradient-to-br from-forest via-forest-dark to-moss/60"
-          >
-            <div aria-hidden className="bg-noise absolute inset-0 opacity-20" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <GiFamilyTree className="size-40 text-gold/70 sm:size-52" />
-            </div>
+        <div className="relative order-1 mx-auto aspect-[4/5] w-full max-w-xs overflow-hidden rounded-[2.5rem] lg:order-2 lg:max-w-md">
+          <motion.div style={{ y: imgY }} className="absolute inset-[-8%]">
+            <Image
+              src="/media/logo/moozen-journey-farm-to-family.png"
+              alt="Moozen's journey from farm to family"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
           </motion.div>
           <div className="absolute inset-0 rounded-[2.5rem] ring-1 ring-inset ring-white/10" />
           <motion.div
