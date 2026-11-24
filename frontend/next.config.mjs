@@ -23,6 +23,15 @@ function uploadsRemotePattern() {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    // This project is deployed as a multi-service Vercel app (frontend +
+    // Express backend in one project). In that topology Vercel's built-in
+    // /_next/image optimizer route is not served for the frontend service,
+    // so EVERY optimized image — local public assets (logo) and remote
+    // uploads alike — 404s. Serving images unoptimized makes next/image emit
+    // plain <img> tags pointing straight at the real URLs (which all return
+    // 200), so they render reliably. The remotePatterns below are kept for
+    // local `next dev`, where the optimizer does run.
+    unoptimized: true,
     // Lets next/image optimize uploaded product/category/blog/recipe/homepage
     // images served by the Express backend's /uploads static route.
     remotePatterns: [
