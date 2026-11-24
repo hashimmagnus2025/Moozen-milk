@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Design tokens — Moozen Milk dairy design system (blue / white / amber) */
+/* ------------------------------------------------------------------ */
+:root {
+  /* Clean backgrounds */
+  --color-cream: #ffffff;
+  --color-cream-deep: #f4f9fd;
+  --color-cream-dark: #e2edf6;
+
+  /* Trust blue family (primary) */
+  --color-forest: #0b5fa5;
+  --color-forest-dark: #073d6b;
+  --color-blue-forest: #0b5fa5;
+  --color-orange-forest: #f5a623;
+  --color-moss: #1e88e5;
+  --color-sage: #dceaf5;
+
+  /* Amber accent (CTAs / highlights) */
+  --color-gold: #f5a623;
+  --color-gold-light: #f9c667;
+  --color-terracotta: #d9770b;
+
+  /* Neutrals */
+  --color-charcoal: #16202b;
+  --color-muted: #5b6b7a;
+  --color-white: #ffffff;
+
+  /* Section rhythm */
+  --section-y-mobile: 5.5rem;
+  --section-y-desktop: 9rem;
+  --container-x-mobile: 1.25rem;
+  --container-x-desktop: 5rem;
+  --container-max: 1440px;
+}
+
+@theme inline {
+  --color-cream: var(--color-cream);
+  --color-cream-deep: var(--color-cream-deep);
+  --color-cream-dark: var(--color-cream-dark);
+  --color-forest: var(--color-forest);
+  --color-forest-dark: var(--color-forest-dark);
+  --color-moss: var(--color-moss);
+  --color-sage: var(--color-sage);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-terracotta: var(--color-terracotta);
+  --color-charcoal: var(--color-charcoal);
+  --color-muted: var(--color-muted);
+  --color-blue-forest: var(--color-blue-forest);
+  --color-orange-forest: var(--color-orange-forest);
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+
+  --breakpoint-xs: 420px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-float-slow: float 7s ease-in-out infinite;
+  --animate-sway: sway 4s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+/* Route loader — fades in only if loading takes longer than ~200ms so quick
+   navigations never flash it. */
+@keyframes loader-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes loader-ripple {
+  0% { transform: scale(0.6); opacity: 0.45; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+@keyframes loader-drop {
+  0%, 100% { transform: translateY(-6px); }
+  50% { transform: translateY(6px); }
+}
+@keyframes loader-bar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(260%); }
+}
+@keyframes page-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-motion, .loader-motion * { animation: none !important; opacity: 1 !important; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                 */
+/* ------------------------------------------------------------------ */
+* {
+  border-color: var(--color-cream-dark);
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-feature-settings: "ss01" on, "cv01" on;
+}
+
+::selection {
+  background-color: var(--color-gold-light);
+  color: var(--color-charcoal);
+}
+
+/* Custom scrollbar — subtle, premium */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-cream-dark);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-moss);
+}
+
+/* ------------------------------------------------------------------ */
+/* Reusable low-level utilities                                        */
+/* ------------------------------------------------------------------ */
+@utility container-premium {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-x-mobile);
+
+  @media (min-width: 1024px) {
+    padding-inline: var(--container-x-desktop);
+  }
+}
+
+@utility section-y {
+  padding-block: var(--section-y-mobile);
+
+  @media (min-width: 1024px) {
+    padding-block: var(--section-y-desktop);
+  }
+}
+
+@utility text-balance-pretty {
+  text-wrap: balance;
+}
+
+@utility bg-noise {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(42, 38, 32, 0.045) 1px,
+    transparent 0
+  );
+  background-size: 22px 22px;
+}
+
+@utility glass-nav {
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+}
