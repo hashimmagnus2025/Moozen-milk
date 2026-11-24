@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 "use client";
 
 import { useEffect } from "react";
@@ -10,17 +9,18 @@ const variants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    },
   },
 };
 
 /**
- * Wraps route content so navigations fade the new page in instead of hard-cutting.
+ * Wraps route content so navigations fade the new page in.
  *
- * There is deliberately no exit animation / mode="wait": that held the outgoing
- * page until its exit finished and only then mounted the new one, so any slow
- * route (e.g. the homepage waiting on API data) left <main> empty and the page
- * looked blank after clicking the navbar logo.
+ * No exit animation or mode="wait" is used.
+ * This avoids delaying the new page while the previous page exits.
  */
 export default function PageTransition({ children }) {
   const pathname = usePathname();
@@ -42,47 +42,3 @@ export default function PageTransition({ children }) {
     </AnimatePresence>
   );
 }
-=======
-"use client";
-
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
-
-const variants = {
-  hidden: { opacity: 0, y: 12 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-  },
-  exit: {
-    opacity: 0,
-    y: -8,
-    transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
-  },
-};
-
-/** Wraps route content so navigations cross-fade instead of hard-cutting. */
-export default function PageTransition({ children }) {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={pathname}
-        initial="hidden"
-        animate="show"
-        exit="exit"
-        variants={variants}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
-  );
-}
->>>>>>> backup-remote-c9b989c
