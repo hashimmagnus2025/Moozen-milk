@@ -31,7 +31,7 @@ export default async function Home() {
       <ProcessTimeline />
       <Stats />
       <BrandStory />
-      <FarmScene />
+      {/* <FarmScene /> */}
       <NewArrivals />
       {/* <Recipes /> */}
       <Blogs />
