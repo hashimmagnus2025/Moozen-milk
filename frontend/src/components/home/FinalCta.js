@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Leaf } from "lucide-react";
 import Section from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
@@ -12,6 +13,17 @@ export default function FinalCta() {
         className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-sage via-cream to-gold-light/60 px-8 py-16 text-center sm:px-16 sm:py-24"
       >
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-noise opacity-40" />
+
+        {/* Mascot peeking from the bottom-right corner */}
+        <Image
+          src="/media/mascot-thumbsup.png"
+          alt="Moozen mascot giving a thumbs up"
+          width={240}
+          height={240}
+          aria-hidden
+          className="pointer-events-none absolute -bottom-2 right-0 z-10 hidden w-44 select-none drop-shadow-[0_14px_30px_rgba(11,95,165,0.25)] sm:block lg:-bottom-4 lg:w-64"
+        />
+
         <span className="relative mx-auto flex size-14 items-center justify-center rounded-full bg-forest text-cream">
           <Leaf className="size-6" strokeWidth={1.75} />
         </span>

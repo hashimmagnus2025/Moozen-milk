@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -118,10 +119,21 @@ export default function Navbar() {
               })}
             </nav>
 
-            {/* Shop Button */}
+            {/* WhatsApp order button */}
             <div className="hidden lg:block">
-              <Button href="/products" size="sm" variant="primary">
-                Shop Now
+              <Button
+                href="https://wa.me/917887888822"
+                size="sm"
+                variant="primary"
+                icon={false}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Order on WhatsApp"
+              >
+                <span className="inline-flex items-center gap-2 whitespace-nowrap">
+                  <FaWhatsapp className="size-[1.15rem] shrink-0" />
+                  WhatsApp
+                </span>
               </Button>
             </div>
 

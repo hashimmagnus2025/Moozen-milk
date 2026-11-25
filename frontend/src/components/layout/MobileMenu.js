@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { X, ArrowUpRight } from "lucide-react";
-import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa6";
+import { FaInstagram, FaFacebookF, FaYoutube, FaWhatsapp } from "react-icons/fa6";
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -98,13 +98,16 @@ export default function MobileMenu({ onClose }) {
         animate="show"
         className="flex flex-col gap-6 border-t border-white/10 px-6 py-8"
       >
-        <Link
-          href="/products"
+        <a
+          href="https://wa.me/917887888822"
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={onClose}
-          className="flex items-center justify-center rounded-full bg-gold px-8 py-4 text-center font-semibold text-forest-dark transition-colors hover:bg-gold-light"
+          className="flex items-center justify-center gap-2.5 rounded-full bg-gold px-8 py-4 text-center font-semibold text-forest-dark transition-colors hover:bg-gold-light"
         >
-          Shop Now
-        </Link>
+          <FaWhatsapp className="size-5 shrink-0" />
+          WhatsApp
+        </a>
         <div className="flex items-center justify-center gap-6">
           {SOCIALS.map(({ icon: Icon, href, label }) => (
             <a
