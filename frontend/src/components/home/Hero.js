@@ -38,31 +38,44 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex items-center overflow-hidden bg-[#f7f4e8] pb-[58vw] text-forest-dark lg:min-h-[100svh] lg:pb-0"
+      className="relative flex items-start overflow-hidden bg-[#f7f4e8] pb-[112vw] text-forest-dark lg:items-center lg:min-h-[100svh] lg:pb-0"
     >
-      {/* Product collage background */}
+      {/* Product collage background — full-width strip on mobile, right-side on desktop */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 aspect-[16/11] lg:inset-y-0 lg:left-[38%] lg:right-0 lg:aspect-auto xl:left-[30%]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[112vw] lg:inset-0 lg:left-[38%] lg:right-0 lg:h-auto xl:left-[30%]"
       >
+        {/* Mobile artwork — full-width scene anchored to the bottom */}
+        <Image
+          src="/media/hero-mobile.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-bottom lg:hidden"
+        />
+
+        {/* Desktop artwork */}
         <Image
           src="/media/hero-3.png"
           alt=""
           fill
           priority
-          sizes="(min-width: 1024px) 70vw, 100vw"
-          className="object-contain object-bottom lg:object-[70%_50%]"
+          sizes="70vw"
+          className="hidden object-contain object-[70%_50%] lg:block"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f7f4e8] via-[#f7f4e8]/15 to-transparent lg:bg-gradient-to-r lg:from-[#f7f4e8] lg:from-0% lg:via-[#f7f4e8]/50 lg:via-20% lg:to-transparent lg:to-55%" />
+        {/* Mobile: blend the top of the scene into the cream text area */}
+        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#f7f4e8] to-transparent lg:hidden" />
 
+        {/* Desktop fades */}
+        <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-r lg:from-[#f7f4e8] lg:from-0% lg:via-[#f7f4e8]/50 lg:via-20% lg:to-transparent lg:to-55%" />
         <div className="absolute inset-x-0 top-0 hidden h-56 bg-gradient-to-b from-[#f7f4e8] via-[#f7f4e8]/60 to-transparent lg:block" />
-
         <div className="absolute inset-x-0 bottom-0 hidden h-24 bg-gradient-to-t from-[#f7f4e8]/60 to-transparent lg:block" />
       </div>
 
-      {/* Ambient background effects */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
+      {/* Ambient background effects — desktop only (kept off the mobile photo) */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 hidden lg:block">
         <div className="absolute -left-32 top-[-10%] size-[32rem] rounded-full bg-sky-200/50 blur-[110px]" />
         <div className="absolute right-[-15%] top-1/3 size-[28rem] rounded-full bg-gold/15 blur-[120px]" />
       </div>
