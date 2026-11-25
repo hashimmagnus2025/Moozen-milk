@@ -38,14 +38,14 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex items-start overflow-hidden bg-[#f7f4e8] pb-[112vw] text-forest-dark lg:items-center lg:min-h-[100svh] lg:pb-0"
+      className="relative flex items-start overflow-hidden bg-[#f7f4e8] min-h-[125vw] text-forest-dark lg:items-center lg:min-h-[100svh]"
     >
-      {/* Product collage background — full-width strip on mobile, right-side on desktop */}
+      {/* Product collage background — full-bleed on mobile, right-side on desktop */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[112vw] lg:inset-0 lg:left-[38%] lg:right-0 lg:h-auto xl:left-[30%]"
+        className="pointer-events-none absolute inset-0 lg:left-[38%] lg:right-0 xl:left-[30%]"
       >
-        {/* Mobile artwork — full-width scene anchored to the bottom */}
+        {/* Mobile artwork — full-screen scene behind the content */}
         <Image
           src="/media/hero-mobile.png"
           alt=""
@@ -65,8 +65,8 @@ export default function Hero() {
           className="hidden object-contain object-[70%_50%] lg:block"
         />
 
-        {/* Mobile: blend the top of the scene into the cream text area */}
-        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#f7f4e8] to-transparent lg:hidden" />
+        {/* Mobile: soft cream scrim at the top so the headline stays readable over the sky */}
+        <div className="absolute inset-x-0 top-0 h-[46%] bg-gradient-to-b from-[#f7f4e8] via-[#f7f4e8]/35 to-transparent lg:hidden" />
 
         {/* Desktop fades */}
         <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-r lg:from-[#f7f4e8] lg:from-0% lg:via-[#f7f4e8]/50 lg:via-20% lg:to-transparent lg:to-55%" />
