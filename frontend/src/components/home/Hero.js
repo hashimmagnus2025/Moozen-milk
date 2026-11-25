@@ -46,7 +46,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-x-0 bottom-0 aspect-[16/11] lg:inset-y-0 lg:left-[38%] lg:right-0 lg:aspect-auto xl:left-[30%]"
       >
         <Image
-          src="/media/product-cat-5.png"
+          src="/media/hero-1.jpeg"
           alt=""
           fill
           priority

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { X, ArrowUpRight } from "lucide-react";
-import { FaInstagram, FaFacebookF, FaYoutube, FaWhatsapp } from "react-icons/fa6";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -35,8 +35,7 @@ const linkVariants = {
 
 const SOCIALS = [
   { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook" },
-  { icon: FaYoutube, href: "https://youtube.com", label: "YouTube" },
+  { icon: FaWhatsapp, href: "https://wa.me/917887888822", label: "WhatsApp" },
 ];
 
 export default function MobileMenu({ onClose }) {
