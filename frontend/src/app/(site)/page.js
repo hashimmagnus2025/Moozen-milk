@@ -35,7 +35,7 @@ export default async function Home() {
       <NewArrivals />
       {/* <Recipes /> */}
       <Blogs />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Sustainability />
       <FinalCta />
     </>
