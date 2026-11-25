@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { X, ArrowUpRight } from "lucide-react";
@@ -49,13 +50,22 @@ export default function MobileMenu({ onClose }) {
       animate="show"
       exit="exit"
     >
-      <div className="flex items-center justify-between px-6 pt-6">
-        <span className="font-display text-2xl italic">{SITE_CONFIG.name}</span>
+      <div className="flex items-center justify-between bg-white px-6 py-4 shadow-sm">
+        <Link href="/" onClick={onClose} aria-label={SITE_CONFIG.name} className="inline-flex items-center">
+          <Image
+            src="/media/logo/Moozen-logo.png"
+            alt={SITE_CONFIG.name}
+            width={140}
+            height={58}
+            priority
+            className="h-9 w-auto object-contain"
+          />
+        </Link>
         <button
           type="button"
           onClick={onClose}
           aria-label="Close menu"
-          className="flex size-11 items-center justify-center rounded-full bg-white/10 text-cream transition-colors hover:bg-white/20"
+          className="flex size-11 items-center justify-center rounded-full bg-forest-dark/10 text-forest-dark transition-colors hover:bg-forest-dark/20"
         >
           <X strokeWidth={2} className="size-6" />
         </button>

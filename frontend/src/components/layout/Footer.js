@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import Container from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -37,8 +38,14 @@ export default function Footer() {
 
         <div className="grid grid-cols-2 gap-10 py-14 sm:grid-cols-4">
           <div className="col-span-2 sm:col-span-1">
-            <Link href="/" className="font-display text-3xl italic">
-              {SITE_CONFIG.name}
+            <Link href="/" aria-label={SITE_CONFIG.name} className="inline-flex items-center rounded-2xl bg-white px-4 py-2.5 shadow-sm">
+              <Image
+                src="/media/logo/Moozen-logo.png"
+                alt={SITE_CONFIG.name}
+                width={150}
+                height={62}
+                className="h-10 w-auto object-contain"
+              />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/55">
               {SITE_CONFIG.description}
