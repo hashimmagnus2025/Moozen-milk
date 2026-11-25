@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa6";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import Container from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import NewsletterForm from "@/components/layout/NewsletterForm";
@@ -10,8 +10,7 @@ import { fadeUp } from "@/lib/animations";
 
 const SOCIALS = [
   { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook" },
-  { icon: FaYoutube, href: "https://youtube.com", label: "YouTube" },
+  { icon: FaWhatsapp, href: "https://wa.me/917887888822", label: "WhatsApp" },
 ];
 
 export default function Footer() {
@@ -22,7 +21,7 @@ export default function Footer() {
         className="pointer-events-none absolute -top-32 right-[-10%] size-96 rounded-full bg-moss/20 blur-3xl"
       />
 
-      <Container className="relative py-20 lg:py-28">
+      <Container className="relative py-20 lg:py-20">
         <Reveal variants={fadeUp} className="flex flex-col gap-6 border-b border-white/10 pb-14 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
@@ -82,12 +81,19 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-cream/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <Link href="/faq" className="hover:text-gold">FAQ</Link>
-            <Link href="/admin/login" className="hover:text-gold">Admin</Link>
-            <span>Crafted with care, in India.</span>
-          </div>
+          <p>
+            Designed and developed by{" "}
+            <a
+              href="https://magnusideas.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium text-cream/70 transition-colors hover:text-gold"
+            >
+              Magnus Ideas Pvt Ltd
+            </a>
+            {" "}&middot; &copy; {new Date().getFullYear()} Star Agro. All rights reserved.
+          </p>
+        
         </div>
       </Container>
     </footer>

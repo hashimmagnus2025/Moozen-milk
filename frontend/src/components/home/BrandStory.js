@@ -26,7 +26,7 @@ export default function BrandStory() {
           </h2>
           <p className="mt-7 max-w-lg text-lg leading-relaxed text-muted">
             In 1984, our founder started delivering milk from a single
-            courtyard in a small village outside Pune. Four decades on, the
+            courtyard in a small village outside Nashik. Four decades on, the
             scale has changed — the standard hasn&rsquo;t. Every partnership,
             every process, every product still has to pass the same test:
             would we serve this to our own family?
@@ -61,7 +61,7 @@ export default function BrandStory() {
             className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/95 px-5 py-4 shadow-xl"
           >
             <p className="font-display text-lg italic text-forest-dark">Est. 1984</p>
-            <p className="mt-0.5 text-xs text-muted">Pune, Maharashtra — where it all began.</p>
+            <p className="mt-0.5 text-xs text-muted">Nashik, Maharashtra — where it all began.</p>
           </motion.div>
         </div>
       </Container>

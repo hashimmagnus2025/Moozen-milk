@@ -26,7 +26,7 @@ const CONTACT_DETAILS = [
   // {
   //   icon: MapPin,
   //   title: "Visit Us",
-  //   text: "Moozen Dairy Farm, Pune, Maharashtra, India",
+  //   text: "Moozen Dairy Farm, Nashik, Maharashtra, India",
   // },
 ];
 
